@@ -1,9 +1,11 @@
+import { GraphQLBoolean } from 'graphql';
 import React from 'react';
+import * as Components from '../index'
 
 export default function App() {
   return (
-    <>
-      <h1>Hello World!</h1>
-    </>
+    <div>
+      <Components.GraphQLTesting />
+    </div>
   );
 }
