@@ -1,0 +1,13 @@
+.sensor-measurement{
+    font-size: 3vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: -0.9rem;
+    margin-left: 0.5rem;
+    /* color: #009DDC; */
+    /* -webkit-text-stroke: 1px white;  */
+}
+
+ /* size of the sensor */  
+.sensor{
+    transform: scale(1.25); 
+}

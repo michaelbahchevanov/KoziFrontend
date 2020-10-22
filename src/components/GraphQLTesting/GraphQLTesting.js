@@ -1,12 +1,11 @@
 import React, { Fragment } from "react";
 import { gql, useQuery } from "@apollo/client";
 
-import { Button, FormControl, Row, Col, Container, Table } from 'react-bootstrap';
+import { Row, Col, Container, Table } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-//import { LaunchTile, Header, Button, Loading } from "../components";
 
-const GET_LAUNCHES = gql`
+const GET_SENSORS = gql`
 {
     MeanClimateMeasurements {
       floor loc_x loc_y temperature humidity
@@ -16,9 +15,10 @@ const GET_LAUNCHES = gql`
 
 
 const Launches = () => {
-    const { data, loading, error } = useQuery(GET_LAUNCHES);
+    const { data, loading, error } = useQuery(GET_SENSORS);
   
     if (error) return <p>ERROR</p>;
+    // if (loading) return <p>Loading</p> 
     if (!data) return <p>Not found</p>;
   
     return (
