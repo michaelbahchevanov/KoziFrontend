@@ -5,6 +5,7 @@ export default function App() {
   return (
     <div style={{ background: '#EEEEEE' }}>
       <Components.NavigationBar />
+      <Components.Widgets/>
       <Components.SensorMap />
       <Components.GraphQLTesting />
     </div>
