@@ -21,14 +21,14 @@ const widget = () => {
       (a, b) => a + b.temperature,
       0
     ) / data.MeanClimateMeasurements.length
-  ).toFixed(2) || 0;
+  ).toFixed(1) || 0;
 
   var avgHum =   (
     data.MeanClimateMeasurements.reduce(
       (a, b) => a + b.humidity,
       0
     ) / data.MeanClimateMeasurements.length
-  ).toFixed(2) || 0;
+  ).toFixed(1) || 0;
 
 
   if (error) return <p>ERROR</p>;
@@ -38,7 +38,7 @@ const widget = () => {
   return (
     <div>
     <div className="widget">
-      <h1 className="value">{avgTemp}</h1>
+      <h1 className="value">{avgTemp}°C</h1>
       <p className="description">Avg.Temp</p>
     </div>
     <div className="widget">
