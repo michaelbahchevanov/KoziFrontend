@@ -52,7 +52,9 @@ export const SensorMap = () => {
                   top: (s.loc_y - 1) * CELL_HEIGHT + '%',
                 }}
               >
-                {s.temperature.toFixed(1)}
+                <span className="map-temperature">
+                {s.temperature.toFixed(1) + '°C'}
+                </span>
               </span>
             </div>
           ))}

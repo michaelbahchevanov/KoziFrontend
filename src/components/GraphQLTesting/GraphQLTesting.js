@@ -1,3 +1,7 @@
+//
+// This component is obsolete, it's for testing purposes only
+//
+
 import React from 'react';
 import { gql, useQuery } from '@apollo/client';
 

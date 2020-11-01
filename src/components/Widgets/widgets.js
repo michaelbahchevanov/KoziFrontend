@@ -37,19 +37,21 @@ const Widget = () => {
 
 
   return (
-    <div className = "widgets">
+    <div className="container">
+      <div className = "widgets justify-content-around">
+        <div className="widget ">
+        <h1 className="value">{data.MeanClimateMeasurements.length}</h1>
+        <p className="description">Active sensors</p>
+      </div>
       <div className="widget">
-  <h1 className="value">{data.MeanClimateMeasurements.length}</h1>
-      <p className="description">Active sensors</p>
-    </div>
-    <div className="widget">
-      <h1 className="value">{avgTemp}°C</h1>
-      <p className="description">Avg.Temp</p>
-    </div>
-    <div className="widget">
-      <h1 className="value">{avgHum}%</h1>
-      <p className="description">Avg.Hum</p>
-    </div>
+        <h1 className="value">{avgTemp}°C</h1>
+        <p className="description">Avg.Temp</p>
+      </div>
+      <div className="widget">
+        <h1 className="value">{avgHum}%</h1>
+        <p className="description">Avg.Hum</p>
+      </div>
+      </div>
     </div>
   );
 };
