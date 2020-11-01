@@ -1,6 +1,12 @@
+.widgets {
+  display: flex;
+  justify-content: center;
+}
+
 .widget {
   background-color: #bfd5dd;
   border-radius: 25%;
+  margin: 20px;
   height: 200px;
   width: 200px;
   display: flex;
@@ -8,13 +14,13 @@
   flex-direction: column;
 }
 .widget .value {
-  font-size: 80px;
+  font-size: 60px;
   height: 70px;
   color: #009ddc;
   margin-bottom: 5%;
   margin-top: 25%;
 }
 .widget .description {
-  margin-bottom: 30%;
+  margin-bottom: 20%;
   font-size: 24px;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { gql, useQuery } from '@apollo/client';
-import "./widget.css";
+import "./widgets.css";
 
 const GET_SENSORS = gql`
   {
@@ -13,9 +13,14 @@ const GET_SENSORS = gql`
     }
   }
 `;
-const widget = () => {
+const Widget = () => {
   const { data, loading, error } = useQuery(GET_SENSORS);
-  var avgTemp =          
+  //let data  = {MeanClimateMeasurements:[]};
+
+ if (error) return <p>ERROR</p>;
+ if (loading) return <p>Loading</p>;
+ if (!data) return <p>Not found</p>;
+ var avgTemp =          
   (
     data.MeanClimateMeasurements.reduce(
       (a, b) => a + b.temperature,
@@ -31,12 +36,12 @@ const widget = () => {
   ).toFixed(1) || 0;
 
 
-  if (error) return <p>ERROR</p>;
-  if (loading) return <p>Loading</p>;
-  if (!data) return <p>Not found</p>;
-
   return (
-    <div>
+    <div className = "widgets">
+      <div className="widget">
+  <h1 className="value">{data.MeanClimateMeasurements.length}</h1>
+      <p className="description">Active sensors</p>
+    </div>
     <div className="widget">
       <h1 className="value">{avgTemp}°C</h1>
       <p className="description">Avg.Temp</p>
@@ -49,4 +54,4 @@ const widget = () => {
   );
 };
 
-export default widgets;
+export default Widget;
