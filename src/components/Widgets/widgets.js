@@ -42,7 +42,7 @@ const widget = () => {
       <p className="description">Avg.Temp</p>
     </div>
     <div className="widget">
-      <h1 className="value">{avgHum}</h1>
+      <h1 className="value">{avgHum}%</h1>
       <p className="description">Avg.Hum</p>
     </div>
     </div>
