@@ -1,9 +1,12 @@
 import React from 'react';
+import * as Components from '../index';
 
 export default function App() {
   return (
-    <>
-      <h1>Hello World!</h1>
-    </>
+    <div style={{ background: '#EEEEEE' }}>
+      <Components.NavigationBar />
+      <Components.SensorMap />
+      <Components.Widgets/>
+    </div>
   );
 }
