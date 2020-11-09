@@ -2,8 +2,8 @@ import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import { gql, useQuery } from '@apollo/client';
 import floorMapImg from './map-floor-3.png';
-import sensorImg from './sensor.png';
 import './styles.css';
+import { Sensor } from '../';
 
 const GET_SENSORS = gql`
   {
@@ -30,33 +30,12 @@ export const SensorMap = () => {
     <Container className='my-3 p-0'>
       <Row>
         <Col className='p-0'>
-          {data.MeanClimateMeasurements.map((s) => (
-            <div key={s.floor + '-' + s.loc_x + '-' + s.loc_y}>
-              <img
-                className='sensor'
-                src={sensorImg}
-                style={{
-                  position: 'absolute',
-                  width: CELL_WIDTH + '%',
-                  height: CELL_HEIGHT + '%',
-                  left: (s.loc_x - 1) * CELL_WIDTH + '%',
-                  top: (s.loc_y - 1) * CELL_HEIGHT + '%',
-                }}
-                alt='Sensor'
-              />
-              <span
-                className='sensor-measurement'
-                style={{
-                  position: 'absolute',
-                  left: s.loc_x * CELL_WIDTH + '%',
-                  top: (s.loc_y - 1) * CELL_HEIGHT + '%',
-                }}
-              >
-                <span className="map-temperature">
-                {s.temperature.toFixed(1) + '°C'}
-                </span>
-              </span>
-            </div>
+          {data.MeanClimateMeasurements.map((sensor) => (
+            <Sensor
+              {...sensor}
+              cellHeight={CELL_HEIGHT}
+              cellWidth={CELL_WIDTH}
+            />
           ))}
           <img className='w-100' src={floorMapImg} alt='Map' />
         </Col>
