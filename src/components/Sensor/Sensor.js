@@ -1,4 +1,6 @@
 import React from 'react';
+import '../../fonts/OpenSans-Regular.ttf';
+import './sensor.css';
 
 export default function Sensor({
   floor,
@@ -11,28 +13,14 @@ export default function Sensor({
   return (
     <>
       <div
+        className='sensor-font sensor'
         style={{
-          height: '60px',
-          width: '60px',
           position: 'absolute',
-          left: loc_x * cellWidth + '%',
-          top: (loc_y - 1) * cellHeight + '%',
-          marginTop: '-0.9rem',
-          marginLeft: '0.5rem',
-          borderRadius: '50%',
-          border: 'solid',
-          borderColor: 'red',
+          left: (loc_x - 1.25) * cellWidth + '%',
+          top: (loc_y - 1.25) * cellHeight + '%',
         }}
       >
-        <span
-          style={{
-            position: 'absolute',
-            left: '9px',
-            top: '16px',
-          }}
-        >
-          {temperature.toFixed(1) + '°C'}
-        </span>
+        <span>{temperature.toFixed(1) + '°C'}</span>
       </div>
     </>
   );
