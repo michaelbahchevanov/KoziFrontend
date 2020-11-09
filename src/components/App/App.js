@@ -1,10 +1,12 @@
 import React from 'react';
-import * as Components from '../index'
+import * as Components from '../index';
 
 export default function App() {
   return (
-    <div>
+    <div style={{ background: '#EEEEEE' }}>
       <Components.NavigationBar />
+      <Components.SensorMap />
+      <Components.GraphQLTesting />
     </div>
   );
 }

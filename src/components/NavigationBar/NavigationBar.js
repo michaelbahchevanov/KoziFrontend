@@ -1,32 +1,26 @@
-import React from "react";
-import { Navbar, Container, Nav, NavDropdown, FormControl, Button, Row } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './NavigationBar.css';
-import isaacLogo from './isaac-logo.png'
+import React from 'react';
+import { Container, Navbar } from 'react-bootstrap';
+import Logo from './isaac-primary-logo-250px.svg';
+import Cog from './Coggers.svg';
 
-
-const NavigationBar = () => {
-    return (
-        <Container className="container-fluid">
-            <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"></link>
-            <Navbar bg="light" expand="lg" className="fixed-top">
-            <Navbar.Brand className="m-auto">
-                <img
-                    alt=""
-                    src={isaacLogo}
-                    width="200px"
-                    className="align-top logo img-fluid"
-                />
-            </Navbar.Brand>
-            <Nav>
-                <div className="text-center">
-                    <i className="fa fa-cog link-icon" aria-hidden="true" />
-                    <strong><Nav.Link href="#" className="link-text">Settings</Nav.Link></strong>
-                </div>
-            </Nav>
-            </Navbar>
-        </Container>
-    )
+export default function NavigationBar() {
+  return (
+    <Container fluid className='p-0 mb-5'>
+      <Navbar
+        className='mt-0 w-100 d-flex'
+        style={{ background: '#FFFFFF', height: '100px' }}
+      >
+        <img
+          src={Logo}
+          alt='Logo'
+          style={{
+            height: '99px',
+            width: '250px',
+          }}
+          className='ml-auto pt-2'
+        />
+        <img src={Cog} alt='Cog' className='ml-auto mr-3' />
+      </Navbar>
+    </Container>
+  );
 }
-
-export default NavigationBar;
