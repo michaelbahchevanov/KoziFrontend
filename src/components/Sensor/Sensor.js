@@ -9,7 +9,10 @@ export default function Sensor({
   cellHeight = 100 / 32,
   cellWidth = 100 / 14,
   temperature = 0.0,
-}) {
+}){ 
+let faulty = false;
+
+if(!faulty){
   return (
     <>
       <div
@@ -25,3 +28,21 @@ export default function Sensor({
     </>
   );
 }
+else{
+  return (
+    <>
+      <div
+        className='sensor-font faulty-sensor'
+        style={{
+          position: 'absolute',
+          left: (loc_x - 1.25) * cellWidth + '%',
+          top: (loc_y - 1.25) * cellHeight + '%',
+        }}
+      >
+        <span>!</span>
+      </div>
+    </>
+  );
+}
+}
+
