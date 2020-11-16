@@ -1,6 +1,6 @@
 import React from "react";
 import { gql, useQuery } from '@apollo/client';
-import "./Widgets.css";
+import "./widgets.css";
 
 const GET_SENSORS = gql`
   {
