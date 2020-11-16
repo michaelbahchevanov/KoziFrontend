@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import '../../fonts/OpenSans-Regular.ttf';
 import './sensor.css';
 import { Overlay, Popover } from 'react-bootstrap'
+import SensorHoverView from './sensorHoverView'
 
 export default function Sensor({
   floor,
@@ -52,25 +53,7 @@ if(!faulty){
         >
           {temperature.toFixed(1) + '°C'}
         </span>
-        <Overlay
-          show={show}
-          target={target}
-          placement="bottom"
-          containerPadding={20}
-        >
-          <Popover id="popover-contained">
-            <Popover.Title className="text-nowrap" style={{ backgroundColor: "#349CDB", color: "#ffffff" }} as="h3">Sensor Information</Popover.Title>
-            <Popover.Content>
-              <strong>Floor:</strong> {floor}
-              <br />
-              <strong>X:</strong> {loc_x + " "}
-              <strong>Y:</strong> {loc_y}
-              <br />
-              <strong>T:</strong> {(Math.round(temperature * 100) / 100).toFixed(1) + ' °C '}
-              <strong>H:</strong> {(Math.round(humidity * 100) / 100).toFixed(1)}
-            </Popover.Content>
-          </Popover>
-        </Overlay>
+        <SensorHoverView show={show} target={target} floor={floor} temperature={temperature} humidity={humidity} loc_x={loc_x} loc_y={loc_y} ref={ref} />
       </div>
     </>
   );
