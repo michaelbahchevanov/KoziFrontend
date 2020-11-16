@@ -53,7 +53,7 @@ if(!faulty){
         >
           {temperature.toFixed(1) + '°C'}
         </span>
-        <SensorHoverView show={show} target={target} floor={floor} temperature={temperature} humidity={humidity} loc_x={loc_x} loc_y={loc_y} ref={ref} />
+        <SensorHoverView show={show} target={target} floor={floor} temperature={temperature} humidity={humidity} loc_x={loc_x} loc_y={loc_y}/>
       </div>
     </>
   );
