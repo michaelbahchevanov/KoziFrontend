@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: local('OpenSans-Regular'), url(../../fonts/OpenSans-Regular.ttf);
+}
+
+.sensor-font {
+  font-family: 'OpenSans-Regular';
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.sensor {
+  background-color: rgba(255, 255, 255, 0.5);
+
+  height: 60px;
+  width: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  border-radius: 50%;
+  border: solid;
+  border-color: #009ddc;
+
+  filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
+}
+
+.faulty-sensor {
+  background-color: rgba(241, 194, 194, 0.5);
+
+  height: 60px;
+  width: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  font-size: 40px;
+  color: #c12d3f;
+
+  border-radius: 50%;
+  border: solid;
+  border-color: #c12d3f;
+
+  filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
+}
