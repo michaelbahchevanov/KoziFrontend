@@ -56,7 +56,6 @@ if(!faulty){
           show={show}
           target={target}
           placement="bottom"
-          container={ref.current}
           containerPadding={20}
         >
           <Popover id="popover-contained">

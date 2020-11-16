@@ -1,6 +1,6 @@
 import React from "react";
 import { gql, useQuery } from '@apollo/client';
-import "./Widgets.css";
+import "./widgets.css";
 
 const GET_SENSORS = gql`
   {
@@ -13,7 +13,7 @@ const GET_SENSORS = gql`
     }
   }
 `;
-const Widget = () => {
+const Widgets = () => {
   const { data, loading, error } = useQuery(GET_SENSORS);
   //let data  = {MeanClimateMeasurements:[]};
 
@@ -56,4 +56,4 @@ const Widget = () => {
   );
 };
 
-export default Widget;
+export default Widgets;
