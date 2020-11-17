@@ -12,7 +12,7 @@ export default function Sensor({
   cellWidth = 100 / 14,
   temperature = 0.0,
   humidity
-}){ 
+}){
 
   const [show, setShow] = useState(false);
   const [target, setTarget] = useState(null);
@@ -46,9 +46,8 @@ if(!faulty){
       >
         <span
           style={{
-            position: 'absolute',
-            left: '9px',
-            top: '16px',
+            position: 'relative',
+            left: '0%',
           }}
         >
           {temperature.toFixed(1) + '°C'}
@@ -75,4 +74,3 @@ else{
   );
 }
 }
-

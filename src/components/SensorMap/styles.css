@@ -7,9 +7,9 @@
     /* -webkit-text-stroke: 1px white;  */
 }
 
- /* size of the sensor */  
+ /* size of the sensor */
 .sensor{
-    transform: scale(1.25); 
+    transform: scale(1.25);
 }
 
 .map-temperature {
