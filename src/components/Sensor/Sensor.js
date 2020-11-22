@@ -8,6 +8,7 @@ export default function Sensor({
   floor,
   loc_x,
   loc_y,
+  faulty,
   cellHeight = 100 / 32,
   cellWidth = 100 / 14,
   temperature = 0.0,
@@ -27,8 +28,6 @@ export default function Sensor({
     setShow(false);
 
   };
-
-let faulty = false;
 
 if(!faulty){
   return (
