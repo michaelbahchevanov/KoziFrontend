@@ -14,7 +14,7 @@ const GET_SENSORS = gql`
       temperature
       humidity
     },
-    sensorfaults {
+    SensorFaults {
       id
       loc_x
       loc_y
@@ -40,11 +40,11 @@ export const SensorMap = () => {
 
 
 
-  let finalData = data.MeanClimateMeasurements.filter(goodData => !data.sensorfaults.some(
+  let finalData = data.MeanClimateMeasurements.filter(goodData => !data.SensorFaults.some(
     faultySensor => goodData.loc_x === faultySensor.loc_x && goodData.loc_y === faultySensor.loc_y && goodData.floor === faultySensor.floor
   ));
 
-  console.log(data.sensorfaults);
+  console.log(data.SensorFaults);
 
   return (
     <Container className='my-3 p-0'>
@@ -58,7 +58,7 @@ export const SensorMap = () => {
             />
           ))}
 
-          {data.sensorfaults.map((sensor) => (
+          {data.SensorFaults.map((sensor) => (
             <Sensor key={[sensor.loc_x, sensor.loc_y, sensor.floor].join("-")}
               {...sensor}
               cellHeight={CELL_HEIGHT}
