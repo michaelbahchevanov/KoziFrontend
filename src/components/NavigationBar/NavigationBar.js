@@ -13,16 +13,16 @@ export default function NavigationBar() {
                 <img
                     alt=""
                     src={isaacLogo}
-                    width="200px"
+                    width="150px"
                     className="align-top logo img-fluid"
                 />
             </Navbar.Brand>
-            <Nav>
+            {/* <Nav>
                 <div className="text-center">
                     <i className="fa fa-cog link-icon" aria-hidden="true" />
                     <strong><Nav.Link href="#" className="link-text text-decoration-none">Settings</Nav.Link></strong>
                 </div>
-            </Nav>
+            </Nav> */}
       </Navbar>
     </Container>
   );
