@@ -1,12 +1,18 @@
-import React from 'react';
-import * as Components from '../index';
+//App.js
 
-export default function App() {
+import React from "react";
+import Routes from "../routes.js";
+
+import * as Components from '../index';
+import { withRouter } from "react-router-dom";
+
+export const App = ({ location }) => {
   return (
-    <div style={{ background: '#e2ddd975' }}>
-      <Components.NavigationBar />
-      <Components.SensorMap />
-      <Components.Widgets/>
+    <div>
+      {location.pathname !== '/login' &&  <Components.NavigationBar />}
+      <Routes />
     </div>
   );
 }
+
+export default withRouter(App);
