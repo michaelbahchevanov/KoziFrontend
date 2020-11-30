@@ -20,7 +20,7 @@ export default function NavigationBar() {
 
 
   return (
-      <Container fluid >
+      <Container fluid className="px-0 pb-5" >
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"></link>
         <Navbar style={{ background: "white" }} expand="lg">
           <Navbar.Brand className="m-auto">

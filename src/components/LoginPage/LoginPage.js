@@ -12,7 +12,7 @@ export default function LoginPage() {
     }
 
     return (
-        <div>
+        <div className="main-login">
             <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
             <div className="d-md-flex h-md-100 align-items-center">
                 <div className="col-md-6 pt-md-5 p-0 h-md-100 ">
