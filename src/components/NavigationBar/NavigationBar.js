@@ -1,14 +1,7 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import './NavigationBar.css';
-import isaacLogo from './isaac-logo.png'
-import LoginPage from '../LoginPage/LoginPage';
+import isaacLogo from './kozi-isaac-logo.png';
 import { useHistory } from 'react-router-dom';
 
 export default function NavigationBar() {
@@ -27,14 +20,14 @@ export default function NavigationBar() {
             <img
               alt=""
               src={isaacLogo}
-              width="150px"
+              width="300px"
               className="align-top logo img-fluid"
             />
           </Navbar.Brand>
           <Nav>
-            <div className="text-center">
-              <i className="fa fa-sign-in link-icon" aria-hidden="true" />
-              <strong><Nav.Link href="#" onClick={toLogin} className="link-text text-decoration-none">Login</Nav.Link></strong>
+            <div onClick={toLogin} className="text-center">
+              <i className="fa fa-sign-in link-icon" aria-hidden="true"  />
+              <strong><Nav.Link href="login" className="link-text text-decoration-none">Login</Nav.Link></strong>
             </div>
           </Nav>
         </Navbar>

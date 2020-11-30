@@ -27,7 +27,7 @@ const GET_SENSORS = gql`
 export default function MainPage() {
 
   const { data, loading, error } = useQuery(GET_SENSORS, {
-    pollInterval: 5000
+    pollInterval: 10_000
   });
 
   if (error) return <h1>Something went wrong. Please try again</h1>

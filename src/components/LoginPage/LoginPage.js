@@ -1,6 +1,6 @@
 import React from 'react';
 import './LoginPage.css';
-import pic from './isaac-logo.png';
+import logo from './kozi-isaac-logo.png';
 import { useHistory } from 'react-router-dom';
 
 
@@ -20,8 +20,8 @@ export default function LoginPage() {
                         <div className="p-md-5 pb-5">
                             <div className="d-flex justify-content-center align-items-center">
 
-                                <div className="col-8 col-md-8">
-                                    <img className="img img-fluid" src={pic} />
+                                <div className="col-10 col-md-10">
+                                    <img className="img img-fluid" src={logo} />
                                 </div>
                             </div>
 
