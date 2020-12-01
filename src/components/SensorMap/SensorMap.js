@@ -44,10 +44,9 @@ export const SensorMap = () => {
     faultySensor => goodData.loc_x === faultySensor.loc_x && goodData.loc_y === faultySensor.loc_y && goodData.floor === faultySensor.floor
   ));
 
-  console.log(data.SensorFaults);
 
   return (
-    <Container className='my-3 p-0'>
+    <Container className='p-0'>
       <Row>
         <Col className='p-0'>
           {finalData.map((sensor) => (

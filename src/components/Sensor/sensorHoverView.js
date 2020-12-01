@@ -5,6 +5,7 @@ export function Sensorhoverview(props) {
 
     return (
         <Overlay
+        transition={null}
           show={props.show}
           target={props.target}
           placement="top"
