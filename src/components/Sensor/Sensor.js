@@ -61,6 +61,9 @@ export default function Sensor({
     return (
       <>
         <div
+          ref={ref}
+          onMouseEnter={handleHover}
+          onMouseLeave={handleClose}
           className='sensor-font faulty-sensor'
           style={{
             position: 'absolute',

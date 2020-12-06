@@ -37,15 +37,28 @@ export function Sensorhoverview(props) {
         containerPadding={20}
       >
         <Popover id="popover-contained">
-          <Popover.Title className="text-nowrap" style={{ backgroundColor: "#349CDB", color: "#ffffff" }} as="h3">Sensor Information</Popover.Title>
+          <Popover.Title className="text-nowrap" style={{ backgroundColor: "#C12D3F", color: "#ffffff" }} as="h3">Sensor Information</Popover.Title>
           <Popover.Content>
-            <strong>ERROR CODE:</strong> {props.fault_code}
+            <strong>An unexpected error occured:</strong><br />{DisplayErrorCode(props.fault_code)}
           </Popover.Content>
         </Popover>
       </Overlay>
     )
   }
 
+}
+
+function DisplayErrorCode(error) {
+  switch (error) {
+    case "ERROR_TEMPERATURE_OUT_OF_RANGE":
+      return "Temperature was unreasonably high or low"
+
+    case "ERROR_TEMPERATURE_DIFFERENCE_MORE_THAN_2_CELSIUS":
+      return "Temperature changed abruptly"
+
+    case "ERROR_NOT_ENOUGH_VALID_ENTRIES":
+      return "Sensor did not send enough temperature measurements"
+  }
 }
 
 export default Sensorhoverview
