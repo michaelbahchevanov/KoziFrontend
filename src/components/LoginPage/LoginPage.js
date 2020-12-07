@@ -1,15 +1,45 @@
-import React from 'react';
-import './LoginPage.css';
-import logo from './kozi-isaac-logo.png';
-import { useHistory } from 'react-router-dom';
+import React from 'react'
+import './LoginPage.css'
+import logo from './kozi-isaac-logo.png'
+import { Redirect, useHistory } from 'react-router-dom'
+import { gql, useLazyQuery } from '@apollo/client'
+import { Alert } from 'react-bootstrap'
 
+
+const LOGIN_QUERY = gql`query Login($email: String, $password:String){
+    Login(email: $email password: $password){
+      accessToken 
+      error
+    }
+  }
+`
 
 export default function LoginPage() {
-    const history = useHistory();
+
+    const history = useHistory()
+
+    const [login, { error, data }] = useLazyQuery(LOGIN_QUERY)
+
+    const handleLogin = (event) => {
+        event.preventDefault()
+        login({
+            variables: {
+                email: event.target.elements.email.value,
+                password: event.target.elements.password.value
+            }
+        })
+    }
 
     const toHome = () => {
-        history.push("/");
+        history.push("/")
     }
+
+    if (data && data.Login.accessToken) {
+        localStorage.setItem('token', data.Login.accessToken)
+        return <Redirect to="/" />
+    }
+
+    if (error) { console.log(error) }
 
     return (
         <div className="main-login">
@@ -29,7 +59,7 @@ export default function LoginPage() {
 
                             <p className="text-p-secondary h2 mt-5">Login</p>
 
-                            <form className="mt-3">
+                            <form className="mt-3" onSubmit={handleLogin}>
 
                                 <label htmlFor="email" className="text-p-secondary">Email</label>
                                 <div className="input-group">
@@ -48,6 +78,10 @@ export default function LoginPage() {
                                     </div>
                                     <input type="password" name="password" className="form-control" />
                                 </div>
+                                {/* Error message */}
+                                {data && data.Login.error && (
+                                    <div className="alert alert-info mt-3"> {data.Login.error} </div>
+                                )}
 
                                 <div className="col-xl-6">
                                     <button id="submitAction" type="submit" className="btn btn-p-primary btn-block btn-round mt-5  "><span id="main-executeAction" className="text-p-primary text-font-primary">Login</span></button>
@@ -72,5 +106,5 @@ export default function LoginPage() {
 
             </div>
         </div>
-    );
+    )
 }
