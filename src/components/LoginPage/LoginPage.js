@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './LoginPage.css'
 import logo from './kozi-isaac-logo.png'
 import { Redirect, useHistory } from 'react-router-dom'
 import { gql, useLazyQuery } from '@apollo/client'
 import { Alert } from 'react-bootstrap'
+import useAuthenticatedUser from '../../hooks/useAuthenticatedUser'
 
 
 const LOGIN_QUERY = gql`query Login($email: String, $password:String){
@@ -17,6 +18,10 @@ const LOGIN_QUERY = gql`query Login($email: String, $password:String){
 export default function LoginPage() {
 
     const history = useHistory()
+
+    const [errorMessage, setErrorMessage] = useState(null)
+
+    const user = useAuthenticatedUser()
 
     const [login, { error, data }] = useLazyQuery(LOGIN_QUERY)
 
@@ -34,15 +39,24 @@ export default function LoginPage() {
         history.push("/")
     }
 
+    if (user) {
+        return <Redirect to="/" />
+    }
+
     if (data && data.Login.accessToken) {
         localStorage.setItem('token', data.Login.accessToken)
         return <Redirect to="/" />
+    }
+
+    if (data && data.Login.error && data.Login.error !== errorMessage) {
+        setErrorMessage(data.Login.error)
     }
 
     if (error) { console.log(error) }
 
     return (
         <div className="main-login">
+            <small> {user && user.email} </small>
             <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
             <div className="d-md-flex h-md-100 align-items-center">
                 <div className="col-md-6 pt-md-5 p-0 h-md-100 ">
@@ -79,9 +93,7 @@ export default function LoginPage() {
                                     <input type="password" name="password" className="form-control" />
                                 </div>
                                 {/* Error message */}
-                                {data && data.Login.error && (
-                                    <div className="alert alert-info mt-3"> {data.Login.error} </div>
-                                )}
+                                <Alert className="mt-4" show={errorMessage} variant="info" > {errorMessage} </Alert>
 
                                 <div className="col-xl-6">
                                     <button id="submitAction" type="submit" className="btn btn-p-primary btn-block btn-round mt-5  "><span id="main-executeAction" className="text-p-primary text-font-primary">Login</span></button>
@@ -99,7 +111,7 @@ export default function LoginPage() {
                 <div className="col-md-6 bg-blue ">
                     <div className="d-flex flex-column align-items-center h-md-100  p-5 justify-content-center">
                         <h1 id="side-action" className="h1 text-white">Guest</h1>
-                        <p id="side-description" className="text-white h4 text-center">Enter to view real-time sensor information!</p>
+                        <p id="side-description" className="text-white h4 text-center">Enter to manage sensors!</p>
                         <a id="switcher" onClick={toHome} className="btn btn-round btn-switcher btn-lg btn-block mt-3">Login as a guest</a>
                     </div>
                 </div>

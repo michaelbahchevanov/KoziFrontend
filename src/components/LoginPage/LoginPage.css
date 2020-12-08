@@ -19,9 +19,6 @@ body {
 .text-p-primary {color: #ffffff;}
 .text-font-primary { font-size: xx-large}
 .text-font-secondary { font-size: large}
-.fade{
-    opacity: 0;
-}
 .btn-switcher {
     background-color: #ffffff;
 }
