@@ -111,7 +111,7 @@ export default function LoginPage() {
                 <div className="col-md-6 bg-blue ">
                     <div className="d-flex flex-column align-items-center h-md-100  p-5 justify-content-center">
                         <h1 id="side-action" className="h1 text-white">Guest</h1>
-                        <p id="side-description" className="text-white h4 text-center">Enter to manage view real-time sensor information!</p>
+                        <p id="side-description" className="text-white h4 text-center">Enter to view real-time sensor information!</p>
                         <a id="switcher" onClick={toHome} className="btn btn-round btn-switcher btn-lg btn-block mt-3">Login as a guest</a>
                     </div>
                 </div>
