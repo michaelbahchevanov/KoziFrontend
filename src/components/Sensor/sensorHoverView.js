@@ -71,7 +71,7 @@ function DisplayErrorCode(error) {
     case 'ERROR_NOT_ENOUGH_VALID_ENTRIES':
       return 'Sensor did not send enough temperature measurements';
     default:
-      return '';
+      return 'Unknown error...';
   }
 }
 
