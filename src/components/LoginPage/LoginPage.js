@@ -1,13 +1,13 @@
 import React from 'react';
 import './LoginPage.css';
-import pic from './isaac-logo.png';
+import Logo from './isaac-logo.png';
 import { useHistory } from 'react-router-dom';
 
 export default function LoginPage() {
   const history = useHistory();
 
   const toHome = () => {
-    history.push('/kozi-frontend');
+    history.push('');
   };
 
   return (
@@ -22,7 +22,7 @@ export default function LoginPage() {
             <div className='p-md-5 pb-5'>
               <div className='d-flex justify-content-center align-items-center'>
                 <div className='col-8 col-md-8'>
-                  <img className='img img-fluid' src={pic} alt='LogoImage' />
+                  <img className='img img-fluid' src={Logo} alt='LogoImage' />
                 </div>
               </div>
 
