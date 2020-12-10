@@ -6,7 +6,7 @@ import MainPage from '../Views/MainPage';
 const Routes = () => (
   <main>
     <Switch>
-      <Route path='/' component={MainPage} exact />
+      <Route path='/' component={MainPage} />
       <Route path='/login' component={Components.LoginPage}>
         {/* { sessionStorage.getItem('state') ? <Redirect to="/" /> : undefined } */}
       </Route>
