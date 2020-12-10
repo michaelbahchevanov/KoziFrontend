@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/kozi-frontend/static/css/main.ae928450.chunk.css",
-    "main.js": "/kozi-frontend/static/js/main.4d7be32a.chunk.js",
-    "main.js.map": "/kozi-frontend/static/js/main.4d7be32a.chunk.js.map",
+    "main.js": "/kozi-frontend/static/js/main.411f0351.chunk.js",
+    "main.js.map": "/kozi-frontend/static/js/main.411f0351.chunk.js.map",
     "runtime-main.js": "/kozi-frontend/static/js/runtime-main.25700bee.js",
     "runtime-main.js.map": "/kozi-frontend/static/js/runtime-main.25700bee.js.map",
     "static/js/2.55c3456c.chunk.js": "/kozi-frontend/static/js/2.55c3456c.chunk.js",
     "static/js/2.55c3456c.chunk.js.map": "/kozi-frontend/static/js/2.55c3456c.chunk.js.map",
     "index.html": "/kozi-frontend/index.html",
-    "precache-manifest.f05fab536b01dfac4d4a70a8027adc5e.js": "/kozi-frontend/precache-manifest.f05fab536b01dfac4d4a70a8027adc5e.js",
+    "precache-manifest.e7ad2482eb6e11b6fde7b517fc315c27.js": "/kozi-frontend/precache-manifest.e7ad2482eb6e11b6fde7b517fc315c27.js",
     "service-worker.js": "/kozi-frontend/service-worker.js",
     "static/css/main.ae928450.chunk.css.map": "/kozi-frontend/static/css/main.ae928450.chunk.css.map",
     "static/js/2.55c3456c.chunk.js.LICENSE.txt": "/kozi-frontend/static/js/2.55c3456c.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.25700bee.js",
     "static/js/2.55c3456c.chunk.js",
     "static/css/main.ae928450.chunk.css",
-    "static/js/main.4d7be32a.chunk.js"
+    "static/js/main.411f0351.chunk.js"
   ]
 }
