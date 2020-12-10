@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/kozi-frontend/static/css/main.94f935da.chunk.css",
-    "main.js": "/kozi-frontend/static/js/main.7872139c.chunk.js",
-    "main.js.map": "/kozi-frontend/static/js/main.7872139c.chunk.js.map",
+    "main.css": "/kozi-frontend/static/css/main.ae928450.chunk.css",
+    "main.js": "/kozi-frontend/static/js/main.7b6591d6.chunk.js",
+    "main.js.map": "/kozi-frontend/static/js/main.7b6591d6.chunk.js.map",
     "runtime-main.js": "/kozi-frontend/static/js/runtime-main.25700bee.js",
     "runtime-main.js.map": "/kozi-frontend/static/js/runtime-main.25700bee.js.map",
     "static/css/2.d9ad5f5c.chunk.css": "/kozi-frontend/static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.12abda7b.chunk.js": "/kozi-frontend/static/js/2.12abda7b.chunk.js",
-    "static/js/2.12abda7b.chunk.js.map": "/kozi-frontend/static/js/2.12abda7b.chunk.js.map",
+    "static/js/2.b7951988.chunk.js": "/kozi-frontend/static/js/2.b7951988.chunk.js",
+    "static/js/2.b7951988.chunk.js.map": "/kozi-frontend/static/js/2.b7951988.chunk.js.map",
     "index.html": "/kozi-frontend/index.html",
-    "precache-manifest.22fed9822ddb23a9b0ff066ae847df6c.js": "/kozi-frontend/precache-manifest.22fed9822ddb23a9b0ff066ae847df6c.js",
+    "precache-manifest.f3bdec7448ddcfa17b58f8d162585cba.js": "/kozi-frontend/precache-manifest.f3bdec7448ddcfa17b58f8d162585cba.js",
     "service-worker.js": "/kozi-frontend/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/kozi-frontend/static/css/2.d9ad5f5c.chunk.css.map",
-    "static/css/main.94f935da.chunk.css.map": "/kozi-frontend/static/css/main.94f935da.chunk.css.map",
-    "static/js/2.12abda7b.chunk.js.LICENSE.txt": "/kozi-frontend/static/js/2.12abda7b.chunk.js.LICENSE.txt",
+    "static/css/main.ae928450.chunk.css.map": "/kozi-frontend/static/css/main.ae928450.chunk.css.map",
+    "static/js/2.b7951988.chunk.js.LICENSE.txt": "/kozi-frontend/static/js/2.b7951988.chunk.js.LICENSE.txt",
     "static/media/sensor.css": "/kozi-frontend/static/media/OpenSans-Regular.3ed9575d.ttf",
     "static/media/map-floor-3.png": "/kozi-frontend/static/media/map-floor-3.47d1f062.png"
   },
   "entrypoints": [
     "static/js/runtime-main.25700bee.js",
     "static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.12abda7b.chunk.js",
-    "static/css/main.94f935da.chunk.css",
-    "static/js/main.7872139c.chunk.js"
+    "static/js/2.b7951988.chunk.js",
+    "static/css/main.ae928450.chunk.css",
+    "static/js/main.7b6591d6.chunk.js"
   ]
 }
