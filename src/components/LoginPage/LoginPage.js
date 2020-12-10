@@ -6,8 +6,7 @@ import { useHistory } from 'react-router-dom';
 export default function LoginPage() {
   const history = useHistory();
 
-  const toHome = (e) => {
-    e && e.preventDefault();
+  const toHome = () => {
     history.push('');
   };
 
