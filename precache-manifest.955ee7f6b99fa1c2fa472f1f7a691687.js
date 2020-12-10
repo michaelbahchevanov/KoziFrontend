@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "114c85a40f8ac2f01df7d80e15ed3fc0",
+    "revision": "ef36773118ed147d546f738aacf8f7cf",
     "url": "/kozi-frontend/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kozi-frontend/static/css/2.d9ad5f5c.chunk.css"
   },
   {
-    "revision": "d8d08fe73e6faa708662",
+    "revision": "7853ff6b0766e0651e1f",
     "url": "/kozi-frontend/static/css/main.ae928450.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kozi-frontend/static/js/2.b7951988.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d8d08fe73e6faa708662",
-    "url": "/kozi-frontend/static/js/main.f77dc481.chunk.js"
+    "revision": "7853ff6b0766e0651e1f",
+    "url": "/kozi-frontend/static/js/main.b3e45a61.chunk.js"
   },
   {
     "revision": "c3037a1452abbaa3968e",
