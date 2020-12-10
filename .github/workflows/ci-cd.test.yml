@@ -31,6 +31,8 @@ jobs:
 
       - name: Build
         run: npm run build
+      - name: Add 404
+        run: cp ./build/index.html ./build/404.html 
       - name: Deploy
         run: |
           git config --global user.name $user_name
