@@ -15,10 +15,9 @@ const root = document.getElementById('root');
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <BrowserRouter>
+      <BrowserRouter basename='/kozi-frontend'>
         <App />
       </BrowserRouter>
-      ,
     </ApolloProvider>
   </React.StrictMode>,
   root

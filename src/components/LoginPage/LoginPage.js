@@ -7,7 +7,7 @@ export default function LoginPage() {
   const history = useHistory();
 
   const toHome = () => {
-    history.push('/');
+    history.push('/kozi-frontend');
   };
 
   return (
