@@ -1,0 +1,28 @@
+name: CI and CD
+
+on:
+  push:
+    branches: [deployment/config]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set-up Node
+        uses: actions/setup-node@v1
+      - run: npm install
+      - run: npm build
+      - run: npm test
+      - name: Deploy
+        uses: crazy-max/ghaction-github-pages@v1
+        with:
+          target-branch: gh-pages
+          build_dir: build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
