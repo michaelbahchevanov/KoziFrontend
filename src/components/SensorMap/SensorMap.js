@@ -1,23 +1,28 @@
-import React, { useLayoutEffect } from 'react'
-import { Row, Col, Container } from 'react-bootstrap'
+import React, { useLayoutEffect, useEffect, useState } from 'react'
+import { Row, Col, Container, Button } from 'react-bootstrap'
 import floorMapImg from './map-floor-3.png'
 import './styles.css'
 import { Sensor } from '../'
 import heatmap from 'heatmapjs'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFire } from '@fortawesome/free-solid-svg-icons'
+import { useToggleState } from '../../hooks/useToggleState'
 
 const CELL_WIDTH = 100 / 32 // 32 cells horizontally, each one of them 100/32% wide
 const CELL_HEIGHT = 100 / 14 // 14 cells vertically, each one of them 100/14% wide
 
 export const SensorMap = ({ workingSensors, faultySensors }) => {
 
-  useLayoutEffect(() => {
+  let [showHeatMap, toggleHeatmap] = useToggleState(true)
+
+  const loadHeatmap = () => {
+
     let container = document.querySelector('#SensorMap')
 
-    container.querySelector('img').onload = () => {
-      console.log({ w: container.scrollWidth, h: container.scrollHeight })
+    if (!workingSensors || !showHeatMap)
+      return
 
-      if (!container.scrollHeight)
-        return
+    const load = () => {
 
       let map = heatmap.create({
         container,
@@ -36,30 +41,46 @@ export const SensorMap = ({ workingSensors, faultySensors }) => {
       })
 
 
-      if (workingSensors) {
+      let data = workingSensors.map(s => ({
+        x: 20 + (s.loc_x - 1) * CELL_WIDTH / 100 * container.scrollWidth,
+        y: 10 + (s.loc_y - 1) * CELL_HEIGHT / 100 * container.scrollHeight,
+        value: s.temperature,
+      }))
+      let maxValue = Math.max(...data.map(d => d.value))
+      let minValue = Math.min(...data.map(d => d.value))
 
-        let data = workingSensors.map(s => ({
-          x: 20 + (s.loc_x - 1) * CELL_WIDTH / 100 * container.scrollWidth,
-          y: 10 + (s.loc_y - 1) * CELL_HEIGHT / 100 * container.scrollHeight,
-          value: s.temperature,
-        }))
-        let maxValue = Math.max(...data.map(d => d.value))
-        let minValue = Math.min(...data.map(d => d.value))
-
-        console.log({ data, w: container.scrollWidth, h: container.scrollHeight, container })
-
-        map.setData({
-          data,
-        }).setDataMin(minValue).setDataMax(maxValue)
-
-      }
+      map.setData({
+        data,
+      }).setDataMin(minValue).setDataMax(maxValue)
     }
 
+    let mapImage = container.querySelector('img')
 
-  })
+    mapImage.complete ? load() : mapImage.onload = load
+
+    return () => {
+      let heatmap = document.querySelector('#SensorMap canvas')
+      if (heatmap) heatmap.remove()
+    }
+  }
+
+  useEffect(loadHeatmap)
+
+
+  const toggleHeatmapClick = () => {
+    toggleHeatmap()
+  }
 
   return (
     <Container fluid>
+      <Row className='justify-content-center mt-n4 pb-3' >
+        <Col xs={11} lg={10}>
+          <Button variant="outline-primary" onClick={toggleHeatmapClick}>
+            <FontAwesomeIcon icon={faFire} size="2x" className="pr-1" />
+            Heatmap
+          </Button>
+        </Col>
+      </Row>
       <Row className='justify-content-center'>
         <Col id="SensorMap" xs={11} lg={10} className='p-0'>
           {workingSensors.map((sensor) => (

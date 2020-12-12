@@ -4,6 +4,8 @@ import './NavigationBar.css'
 import isaacLogo from './kozi-isaac-logo.png'
 import { useHistory } from 'react-router-dom'
 import useAuthenticatedUser from '../../hooks/useAuthenticatedUser'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 
 export default function NavigationBar() {
   const history = useHistory()
@@ -16,7 +18,6 @@ export default function NavigationBar() {
 
   return (
     <Container fluid className="px-0 pb-5" >
-      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"></link>
       <Navbar className="d-flex" style={{ background: "white", minHeight: 120 }} expand="lg">
         <div style={{ flex: 1 }}>
           <Navbar.Brand className="screen-center" >
@@ -43,9 +44,9 @@ export default function NavigationBar() {
         )}
         {!user && (
           <Nav>
-            <div onClick={toLogin} className="text-center">
-              <i className="fa fa-sign-in link-icon btn" aria-hidden="true" />
-              <strong><Nav.Link href="login" className="link-text text-decoration-none">Login</Nav.Link></strong>
+            <div onClick={toLogin} className="text-center login-buttons">
+              <FontAwesomeIcon icon={faSignInAlt} size="3x" />
+              <Nav.Link href="login" className="text-decoration-none lead font-weight-bold">Login</Nav.Link>
             </div>
           </Nav>
         )}
