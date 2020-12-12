@@ -11,9 +11,15 @@ import { useToggleState } from '../../hooks/useToggleState'
 const CELL_WIDTH = 100 / 32 // 32 cells horizontally, each one of them 100/32% wide
 const CELL_HEIGHT = 100 / 14 // 14 cells vertically, each one of them 100/14% wide
 
+const LOCAL_KEY_SHOW_HEATMAP = 'PREFERENCES_SHOW_HEATMAP'
+
 export const SensorMap = ({ workingSensors, faultySensors }) => {
 
-  let [showHeatMap, toggleHeatmap] = useToggleState(true)
+  const savedPreference = localStorage.getItem(LOCAL_KEY_SHOW_HEATMAP) || "true"
+
+  const heatmapPrefence = "true" === savedPreference.toLowerCase()
+
+  let [showHeatMap, toggleHeatmap] = useToggleState(heatmapPrefence)
 
   const loadHeatmap = () => {
 
@@ -26,7 +32,7 @@ export const SensorMap = ({ workingSensors, faultySensors }) => {
 
       let map = heatmap.create({
         container,
-        radius: 320,
+        radius: mapImage.scrollWidth / 5,
         maxOpacity: .4,
         minOpacity: .0,
         blur: 1,
@@ -54,7 +60,7 @@ export const SensorMap = ({ workingSensors, faultySensors }) => {
       }).setDataMin(minValue).setDataMax(maxValue)
     }
 
-    let mapImage = container.querySelector('img')
+    let mapImage = container.querySelector('img#MapImage')
 
     mapImage.complete ? load() : mapImage.onload = load
 
@@ -68,6 +74,7 @@ export const SensorMap = ({ workingSensors, faultySensors }) => {
 
 
   const toggleHeatmapClick = () => {
+    localStorage.setItem(LOCAL_KEY_SHOW_HEATMAP, !showHeatMap)
     toggleHeatmap()
   }
 
@@ -100,7 +107,7 @@ export const SensorMap = ({ workingSensors, faultySensors }) => {
             />
           ))}
 
-          <img className='w-100' src={floorMapImg} alt='Map' />
+          <img id="MapImage" className='w-100' src={floorMapImg} alt='Map' />
         </Col>
       </Row>
     </Container>

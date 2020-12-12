@@ -3,7 +3,7 @@ import { Container, Navbar, Nav, Dropdown } from 'react-bootstrap'
 import './NavigationBar.css'
 import isaacLogo from './kozi-isaac-logo.png'
 import { useHistory } from 'react-router-dom'
-import useAuthenticatedUser from '../../hooks/useAuthenticatedUser'
+import { useAuthenticatedUser } from '../../hooks'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 

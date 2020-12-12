@@ -4,7 +4,7 @@ import logo from './kozi-isaac-logo.png'
 import { Redirect, useHistory } from 'react-router-dom'
 import { gql, useLazyQuery } from '@apollo/client'
 import { Alert } from 'react-bootstrap'
-import useAuthenticatedUser from '../../hooks/useAuthenticatedUser'
+import { useAuthenticatedUser } from '../../hooks'
 
 
 const LOGIN_QUERY = gql`query Login($email: String, $password:String){
