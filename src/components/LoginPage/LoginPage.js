@@ -1,18 +1,62 @@
-import React from 'react';
-import './LoginPage.css';
-import pic from './isaac-logo.png';
-import { useHistory } from 'react-router-dom';
+import React, { useState } from 'react'
+import './LoginPage.css'
+import logo from './kozi-isaac-logo.png'
+import { Redirect, useHistory } from 'react-router-dom'
+import { gql, useLazyQuery } from '@apollo/client'
+import { Alert } from 'react-bootstrap'
+import useAuthenticatedUser from '../../hooks/useAuthenticatedUser'
 
+
+const LOGIN_QUERY = gql`query Login($email: String, $password:String){
+    Login(email: $email password: $password){
+      accessToken 
+      error
+    }
+  }
+`
 
 export default function LoginPage() {
-    const history = useHistory();
+
+    const history = useHistory()
+
+    const [errorMessage, setErrorMessage] = useState(null)
+
+    const user = useAuthenticatedUser()
+
+    const [login, { error, data }] = useLazyQuery(LOGIN_QUERY)
+
+    const handleLogin = (event) => {
+        event.preventDefault()
+        login({
+            variables: {
+                email: event.target.elements.email.value,
+                password: event.target.elements.password.value
+            }
+        })
+    }
 
     const toHome = () => {
-        history.push("/");
+        history.push("/")
     }
+
+    if (user) {
+        return <Redirect to="/" />
+    }
+
+    if (data && data.Login.accessToken) {
+        localStorage.setItem('token', data.Login.accessToken)
+        return <Redirect to="/" />
+    }
+
+    if (data && data.Login.error && data.Login.error !== errorMessage) {
+        setErrorMessage(data.Login.error)
+    }
+
+    if (error) { console.log(error) }
 
     return (
         <div className="main-login">
+            <small> {user && user.email} </small>
             <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
             <div className="d-md-flex h-md-100 align-items-center">
                 <div className="col-md-6 pt-md-5 p-0 h-md-100 ">
@@ -20,8 +64,8 @@ export default function LoginPage() {
                         <div className="p-md-5 pb-5">
                             <div className="d-flex justify-content-center align-items-center">
 
-                                <div className="col-8 col-md-8">
-                                    <img className="img img-fluid" src={pic} />
+                                <div className="col-10 col-md-10">
+                                    <img className="img img-fluid" src={logo} />
                                 </div>
                             </div>
 
@@ -29,7 +73,7 @@ export default function LoginPage() {
 
                             <p className="text-p-secondary h2 mt-5">Login</p>
 
-                            <form className="mt-3">
+                            <form className="mt-3" onSubmit={handleLogin}>
 
                                 <label htmlFor="email" className="text-p-secondary">Email</label>
                                 <div className="input-group">
@@ -48,6 +92,8 @@ export default function LoginPage() {
                                     </div>
                                     <input type="password" name="password" className="form-control" />
                                 </div>
+                                {/* Error message */}
+                                <Alert className="mt-4" show={errorMessage} variant="info" > {errorMessage} </Alert>
 
                                 <div className="col-xl-6">
                                     <button id="submitAction" type="submit" className="btn btn-p-primary btn-block btn-round mt-5  "><span id="main-executeAction" className="text-p-primary text-font-primary">Login</span></button>
@@ -72,5 +118,5 @@ export default function LoginPage() {
 
             </div>
         </div>
-    );
+    )
 }

@@ -27,7 +27,6 @@ export default function Sensor({
 
   const handleClose = (event) => {
     setShow(false)
-
   }
 
   if (!faulty) {
@@ -37,19 +36,16 @@ export default function Sensor({
           ref={ref}
           onMouseEnter={handleHover}
           onMouseLeave={handleClose}
-          className='sensor-font sensor'
+          className='sensor working-sensor'
           style={{
             position: 'absolute',
             left: (loc_x - 1.25) * cellWidth + '%',
             top: (loc_y - 1.25) * cellHeight + '%',
+            width: cellWidth + '%',
+            height: cellHeight + '%',
           }}
         >
-          <span
-            style={{
-              position: 'relative',
-              left: '0%',
-            }}
-          >
+          <span>
             {temperature.toFixed(1) + '°C'}
           </span>
           <SensorHoverView show={show} target={target} floor={floor} temperature={temperature} fault_code="" humidity={humidity} loc_x={loc_x} loc_y={loc_y} />
@@ -61,19 +57,19 @@ export default function Sensor({
     return (
       <>
         <div
-          ref={ref}
           onMouseEnter={handleHover}
           onMouseLeave={handleClose}
-          className='sensor-font faulty-sensor'
+          className='sensor faulty-sensor'
           style={{
             position: 'absolute',
             left: (loc_x - 1.25) * cellWidth + '%',
             top: (loc_y - 1.25) * cellHeight + '%',
+            width: cellWidth + '%',
+            height: cellHeight + '%',
           }}
         >
           <span>!</span>
           <SensorHoverView show={show} target={target} floor={floor} fault_code={fault_code} loc_x={loc_x} loc_y={loc_y} />
-
         </div>
       </>
     )
