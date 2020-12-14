@@ -1,27 +1,28 @@
 {
   "files": {
-    "main.css": "/kozi-frontend/static/css/main.ae928450.chunk.css",
-    "main.js": "/kozi-frontend/static/js/main.d0c08b12.chunk.js",
-    "main.js.map": "/kozi-frontend/static/js/main.d0c08b12.chunk.js.map",
+    "main.css": "/kozi-frontend/static/css/main.7d28d0a5.chunk.css",
+    "main.js": "/kozi-frontend/static/js/main.a5c15f41.chunk.js",
+    "main.js.map": "/kozi-frontend/static/js/main.a5c15f41.chunk.js.map",
     "runtime-main.js": "/kozi-frontend/static/js/runtime-main.25700bee.js",
     "runtime-main.js.map": "/kozi-frontend/static/js/runtime-main.25700bee.js.map",
     "static/css/2.d9ad5f5c.chunk.css": "/kozi-frontend/static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.620916f2.chunk.js": "/kozi-frontend/static/js/2.620916f2.chunk.js",
-    "static/js/2.620916f2.chunk.js.map": "/kozi-frontend/static/js/2.620916f2.chunk.js.map",
+    "static/js/2.b620c559.chunk.js": "/kozi-frontend/static/js/2.b620c559.chunk.js",
+    "static/js/2.b620c559.chunk.js.map": "/kozi-frontend/static/js/2.b620c559.chunk.js.map",
     "index.html": "/kozi-frontend/index.html",
-    "precache-manifest.d844f1c9fd0a1a1cf866fff65f351383.js": "/kozi-frontend/precache-manifest.d844f1c9fd0a1a1cf866fff65f351383.js",
+    "precache-manifest.89e56f28d9fb1e2065cfbfee5a5a0bcb.js": "/kozi-frontend/precache-manifest.89e56f28d9fb1e2065cfbfee5a5a0bcb.js",
     "service-worker.js": "/kozi-frontend/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/kozi-frontend/static/css/2.d9ad5f5c.chunk.css.map",
-    "static/css/main.ae928450.chunk.css.map": "/kozi-frontend/static/css/main.ae928450.chunk.css.map",
-    "static/js/2.620916f2.chunk.js.LICENSE.txt": "/kozi-frontend/static/js/2.620916f2.chunk.js.LICENSE.txt",
+    "static/css/main.7d28d0a5.chunk.css.map": "/kozi-frontend/static/css/main.7d28d0a5.chunk.css.map",
+    "static/js/2.b620c559.chunk.js.LICENSE.txt": "/kozi-frontend/static/js/2.b620c559.chunk.js.LICENSE.txt",
     "static/media/sensor.css": "/kozi-frontend/static/media/OpenSans-Regular.3ed9575d.ttf",
+    "static/media/kozi-isaac-logo.png": "/kozi-frontend/static/media/kozi-isaac-logo.df9a5e3a.png",
     "static/media/map-floor-3.png": "/kozi-frontend/static/media/map-floor-3.47d1f062.png"
   },
   "entrypoints": [
     "static/js/runtime-main.25700bee.js",
     "static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.620916f2.chunk.js",
-    "static/css/main.ae928450.chunk.css",
-    "static/js/main.d0c08b12.chunk.js"
+    "static/js/2.b620c559.chunk.js",
+    "static/css/main.7d28d0a5.chunk.css",
+    "static/js/main.a5c15f41.chunk.js"
   ]
 }
