@@ -1,8 +1,7 @@
-import React, { useState, useRef } from 'react'
-import '../../fonts/OpenSans-Regular.ttf'
-import './sensor.css'
-import { Overlay, Popover } from 'react-bootstrap'
-import SensorHoverView from './sensorHoverView'
+import React, { useState, useRef } from 'react';
+import '../../fonts/OpenSans-Regular.ttf';
+import './sensor.css';
+import SensorHoverView from './sensorHoverView';
 
 export default function Sensor({
   floor,
@@ -13,21 +12,20 @@ export default function Sensor({
   cellHeight = 100 / 32,
   cellWidth = 100 / 14,
   temperature = 0.0,
-  humidity
+  humidity,
 }) {
-
-  const [show, setShow] = useState(false)
-  const [target, setTarget] = useState(null)
-  const ref = useRef(null)
+  const [show, setShow] = useState(false);
+  const [target, setTarget] = useState(null);
+  const ref = useRef(null);
 
   const handleHover = (event) => {
-    setShow(true)
-    setTarget(event.target)
-  }
+    setShow(true);
+    setTarget(event.target);
+  };
 
   const handleClose = (event) => {
-    setShow(false)
-  }
+    setShow(false);
+  };
 
   if (!faulty) {
     return (
@@ -45,15 +43,21 @@ export default function Sensor({
             height: cellHeight + '%',
           }}
         >
-          <span>
-            {temperature.toFixed(1) + '°C'}
-          </span>
-          <SensorHoverView show={show} target={target} floor={floor} temperature={temperature} fault_code="" humidity={humidity} loc_x={loc_x} loc_y={loc_y} />
+          <span>{temperature.toFixed(1) + '°C'}</span>
+          <SensorHoverView
+            show={show}
+            target={target}
+            floor={floor}
+            temperature={temperature}
+            fault_code=''
+            humidity={humidity}
+            loc_x={loc_x}
+            loc_y={loc_y}
+          />
         </div>
       </>
-    )
-  }
-  else {
+    );
+  } else {
     return (
       <>
         <div
@@ -69,9 +73,16 @@ export default function Sensor({
           }}
         >
           <span>!</span>
-          <SensorHoverView show={show} target={target} floor={floor} fault_code={fault_code} loc_x={loc_x} loc_y={loc_y} />
+          <SensorHoverView
+            show={show}
+            target={target}
+            floor={floor}
+            fault_code={fault_code}
+            loc_x={loc_x}
+            loc_y={loc_y}
+          />
         </div>
       </>
-    )
+    );
   }
 }
