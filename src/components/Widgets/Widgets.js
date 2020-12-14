@@ -27,7 +27,7 @@ const Widgets = ({ workingSensors }) => {
         </Col>
         <Col className='widget'>
           <h1 className='value'>{avgHum}%</h1>
-          <p className='description'>Avg.Hum</p>
+          <p className='description'>Av.Hum</p>
         </Col>
       </Row>
     </Container>
