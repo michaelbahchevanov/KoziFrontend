@@ -2,7 +2,7 @@ name: CI/CD test
 
 on:
   push:
-    branches: [deployment/config]
+    branches: [presentation-sprint5]
 
   workflow_dispatch:
 
