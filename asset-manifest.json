@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/kozi-frontend/static/css/main.7d28d0a5.chunk.css",
-    "main.js": "/kozi-frontend/static/js/main.a5c15f41.chunk.js",
-    "main.js.map": "/kozi-frontend/static/js/main.a5c15f41.chunk.js.map",
+    "main.js": "/kozi-frontend/static/js/main.af225de5.chunk.js",
+    "main.js.map": "/kozi-frontend/static/js/main.af225de5.chunk.js.map",
     "runtime-main.js": "/kozi-frontend/static/js/runtime-main.25700bee.js",
     "runtime-main.js.map": "/kozi-frontend/static/js/runtime-main.25700bee.js.map",
     "static/css/2.d9ad5f5c.chunk.css": "/kozi-frontend/static/css/2.d9ad5f5c.chunk.css",
     "static/js/2.b620c559.chunk.js": "/kozi-frontend/static/js/2.b620c559.chunk.js",
     "static/js/2.b620c559.chunk.js.map": "/kozi-frontend/static/js/2.b620c559.chunk.js.map",
     "index.html": "/kozi-frontend/index.html",
-    "precache-manifest.89e56f28d9fb1e2065cfbfee5a5a0bcb.js": "/kozi-frontend/precache-manifest.89e56f28d9fb1e2065cfbfee5a5a0bcb.js",
+    "precache-manifest.3e9a6118f6fab6170090959222ca384c.js": "/kozi-frontend/precache-manifest.3e9a6118f6fab6170090959222ca384c.js",
     "service-worker.js": "/kozi-frontend/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/kozi-frontend/static/css/2.d9ad5f5c.chunk.css.map",
     "static/css/main.7d28d0a5.chunk.css.map": "/kozi-frontend/static/css/main.7d28d0a5.chunk.css.map",
@@ -23,6 +23,6 @@
     "static/css/2.d9ad5f5c.chunk.css",
     "static/js/2.b620c559.chunk.js",
     "static/css/main.7d28d0a5.chunk.css",
-    "static/js/main.a5c15f41.chunk.js"
+    "static/js/main.af225de5.chunk.js"
   ]
 }
