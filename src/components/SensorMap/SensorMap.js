@@ -19,7 +19,6 @@ export const SensorMap = ({ workingSensors, faultySensors }) => {
 
   let [showHeatMap, toggleHeatmap] = useToggleState(heatmapPrefence)
 
-
   let heatmapDatapoints = workingSensors.map(s => ({
     xPercent: (s.loc_x - 1) * CELL_WIDTH,
     yPercent: (s.loc_y - 1) * CELL_HEIGHT,

@@ -19,6 +19,7 @@ const GET_SENSORS = gql`
       loc_y
       floor
       timestamp
+      fault_code
     }
   }
   

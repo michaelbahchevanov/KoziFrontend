@@ -14,7 +14,6 @@ const Widgets = ({ workingSensors }) => {
     0
   ) / workingSensors.length || 0
 
-
   return (
     <Container>
       <Row lg="8" xl="7" className="justify-content-center">
@@ -32,7 +31,6 @@ const Widgets = ({ workingSensors }) => {
         </Col>
       </Row>
     </Container>
-
   )
 }
 

@@ -11,7 +11,7 @@ export default function NavigationBar() {
   const history = useHistory()
 
   const toLogin = () => {
-    history.push("/login")
+    history.push('/login')
   }
 
   const user = useAuthenticatedUser()
@@ -20,12 +20,12 @@ export default function NavigationBar() {
     <Container fluid className="px-0 pb-5" >
       <Navbar className="d-flex" style={{ background: "white", minHeight: 120 }} expand="lg">
         <div style={{ flex: 1 }}>
-          <Navbar.Brand className="screen-center" >
+          <Navbar.Brand className='screen-center'>
             <img
-              alt="Kozi Isaac logo"
+              alt='Kozi Isaac logo'
               src={isaacLogo}
-              width="300px"
-              className="align-top logo img-fluid"
+              width='300px'
+              className='align-top logo img-fluid'
             />
           </Navbar.Brand>
         </div>
@@ -33,10 +33,10 @@ export default function NavigationBar() {
         {user && (
           <Nav>
             <Dropdown>
-              <Dropdown.Toggle className='font-weight-bold' variant="none">
+              <Dropdown.Toggle className='font-weight-bold' variant='none'>
                 {user.email}
               </Dropdown.Toggle>
-              <Dropdown.Menu alignRight={true} >
+              <Dropdown.Menu alignRight={true}>
                 <Dropdown.Item onClick={user.logout}>Log out</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
@@ -50,7 +50,6 @@ export default function NavigationBar() {
             </div>
           </Nav>
         )}
-
       </Navbar>
     </Container>
   )
