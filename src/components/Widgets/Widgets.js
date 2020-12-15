@@ -1,44 +1,39 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import "./widgets.css";
+import React from "react"
+import { Container, Row, Col } from "react-bootstrap"
+import "./widgets.css"
 
-const Widgets = ({workingSensors}) => {
+const Widgets = ({ workingSensors }) => {
 
- var avgTemp =          
-  (
-    workingSensors.reduce(
-      (a, b) => a + b.temperature,
-      0
-    ) / workingSensors.length
-  ).toFixed(1) || 0;
+  var avgTemp = workingSensors.reduce(
+    (a, b) => a + b.temperature,
+    0
+  ) / workingSensors.length || 0
 
-  var avgHum =   (
-    workingSensors.reduce(
-      (a, b) => a + b.humidity,
-      0
-    ) / workingSensors.length
-  ).toFixed(1) || 0;
+  var avgHum = workingSensors.reduce(
+    (a, b) => a + b.humidity,
+    0
+  ) / workingSensors.length || 0
 
 
   return (
     <Container>
-      <Row lg="8" xl="7"  className="justify-content-center">
+      <Row lg="8" xl="7" className="justify-content-center">
         <Col className="widget ">
           <h1 className="value">{workingSensors.length}</h1>
           <p className="description">Active sensors</p>
         </Col>
         <Col className="widget">
-          <h1 className="value">{avgTemp}°C</h1>
+          <h1 className="value">{avgTemp.toFixed(1)}°C</h1>
           <p className="description">Avg.Temp</p>
         </Col>
         <Col className="widget">
-          <h1 className="value">{avgHum}%</h1>
+          <h1 className="value">{avgHum.toFixed(1)}%</h1>
           <p className="description">Avg.Hum</p>
         </Col>
       </Row>
     </Container>
-      
-  );
-};
 
-export default Widgets;
+  )
+}
+
+export default Widgets

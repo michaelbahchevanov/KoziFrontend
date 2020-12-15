@@ -1,8 +1,8 @@
-import { gql, useQuery } from '@apollo/client';
-import React from "react";
-import { Spinner } from 'react-bootstrap';
+import { gql, useQuery } from '@apollo/client'
+import React from "react"
+import { Spinner } from 'react-bootstrap'
 
-import * as Components from "../components/index";
+import * as Components from "../components/index"
 
 const GET_SENSORS = gql`
   {
@@ -22,30 +22,37 @@ const GET_SENSORS = gql`
     }
   }
   
-`;
+`
 
 export default function MainPage() {
 
   const { data, loading, error } = useQuery(GET_SENSORS, {
     pollInterval: 10_000
-  });
+  })
 
   if (error) return <h1>Something went wrong. Please try again</h1>
-  if (loading) return (
-    <div className="d-flex"> 
-      <Spinner className="mx-auto" animation="border" role="status"> </Spinner> 
-    </div> )
 
-  let workingSensors = data.MeanClimateMeasurements.filter(goodData => !data.SensorFaults.some(
-    faultySensor => goodData.loc_x === faultySensor.loc_x && goodData.loc_y === faultySensor.loc_y && goodData.floor === faultySensor.floor
-  ));
+  let workingSensors = []
+  let faultySensors = []
 
-  let faultySensors = data.SensorFaults
-  
+
+  if (data) {
+    workingSensors = data.MeanClimateMeasurements.filter(goodData => !data.SensorFaults.some(
+      faultySensor => goodData.loc_x === faultySensor.loc_x && goodData.loc_y === faultySensor.loc_y && goodData.floor === faultySensor.floor
+    ))
+    faultySensors = data.SensorFaults
+  }
+
   return (
     <div>
+
+      {/* Loading spinner */}
+      {loading && <div className="d-flex">
+        <Spinner className="mx-auto" animation="border" role="status"> </Spinner>
+      </div>}
+
       <Components.SensorMap workingSensors={workingSensors} faultySensors={faultySensors} />
       <Components.Widgets workingSensors={workingSensors} />
     </div>
-  );
+  )
 }
