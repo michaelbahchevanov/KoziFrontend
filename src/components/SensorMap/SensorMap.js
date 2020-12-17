@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useEffect, useState } from 'react'
+import React from 'react'
 import { Row, Col, Container, Button } from 'react-bootstrap'
 import floorMapImg from './map-floor-3.svg'
 import './styles.css'

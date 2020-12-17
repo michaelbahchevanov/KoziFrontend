@@ -1,6 +1,5 @@
-import React, { useLayoutEffect, useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import './Heatmap.css'
-import { Container } from "react-bootstrap"
 import heatmap from 'heatmapjs'
 
 
@@ -15,7 +14,7 @@ export const Heatmap = ({
         if (!data)
             return
 
-        data = data.map(dataPoint => ({
+        let dataPoints = data.map(dataPoint => ({
             x: 20 + dataPoint.xPercent * container.scrollWidth / 100,
             y: 10 + dataPoint.yPercent * container.scrollHeight / 100,
             ...dataPoint
@@ -38,11 +37,11 @@ export const Heatmap = ({
         })
 
 
-        let maxValue = Math.max(...data.map(d => d.value))
-        let minValue = Math.min(...data.map(d => d.value))
+        let maxValue = Math.max(...dataPoints.map(d => d.value))
+        let minValue = Math.min(...dataPoints.map(d => d.value))
 
         map.setData({
-            data,
+            dataPoints,
         }).setDataMin(minValue).setDataMax(maxValue)
 
 
