@@ -11,7 +11,7 @@ export const Heatmap = ({
 
         let container = document.querySelector('.heatmap-container')
 
-        if (!data)
+        if (!data || !data.length)
             return
 
         let dataPoints = data.map(dataPoint => ({
@@ -41,7 +41,7 @@ export const Heatmap = ({
         let minValue = Math.min(...dataPoints.map(d => d.value))
 
         map.setData({
-            dataPoints,
+            data: dataPoints,
         }).setDataMin(minValue).setDataMax(maxValue)
 
 

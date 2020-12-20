@@ -70,7 +70,7 @@ export const SensorMap = ({ workingSensors, faultySensors }) => {
             />
           ))}
 
-          <img className='w-100' class="floor-map" src={floorMapImg} alt='Map of the floor' />
+          <img className='w-100 floor-map' src={floorMapImg} alt='Map of the floor' />
         </Col>
       </Row>
     </Container>
