@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react';
-import '../../fonts/OpenSans-Regular.ttf';
-import './sensor.css';
-import SensorHoverView from './sensorHoverView';
+import React, { useState, useRef } from 'react'
+import '../../fonts/OpenSans-Regular.ttf'
+import './sensor.css'
+import SensorHoverView from './sensorHoverView'
 
 export default function Sensor({
   floor,
@@ -12,20 +12,21 @@ export default function Sensor({
   cellHeight = 100 / 32,
   cellWidth = 100 / 14,
   temperature = 0.0,
-  humidity,
+  humidity
 }) {
-  const [show, setShow] = useState(false);
-  const [target, setTarget] = useState(null);
-  const ref = useRef(null);
+
+  const [show, setShow] = useState(false)
+  const [target, setTarget] = useState(null)
+  const ref = useRef(null)
 
   const handleHover = (event) => {
-    setShow(true);
-    setTarget(event.target);
-  };
+    setShow(true)
+    setTarget(event.target)
+  }
 
   const handleClose = (event) => {
-    setShow(false);
-  };
+    setShow(false)
+  }
 
   if (!faulty) {
     return (
@@ -36,7 +37,6 @@ export default function Sensor({
           onMouseLeave={handleClose}
           className='sensor working-sensor'
           style={{
-            position: 'absolute',
             left: (loc_x - 1.25) * cellWidth + '%',
             top: (loc_y - 1.25) * cellHeight + '%',
             width: cellWidth + '%',
@@ -56,7 +56,7 @@ export default function Sensor({
           />
         </div>
       </>
-    );
+    )
   } else {
     return (
       <>
@@ -83,6 +83,6 @@ export default function Sensor({
           />
         </div>
       </>
-    );
+    )
   }
 }

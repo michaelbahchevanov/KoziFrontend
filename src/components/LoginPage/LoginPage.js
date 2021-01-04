@@ -1,59 +1,58 @@
-import React, { useState } from 'react';
-import './LoginPage.css';
-import logo from './kozi-isaac-logo.png';
-import { Redirect, useHistory } from 'react-router-dom';
-import { gql, useLazyQuery } from '@apollo/client';
-import { Alert } from 'react-bootstrap';
-import useAuthenticatedUser from '../../hooks/useAuthenticatedUser';
+import React, { useState } from 'react'
+import './LoginPage.css'
+import logo from './kozi-isaac-logo.png'
+import { Redirect, useHistory } from 'react-router-dom'
+import { gql, useLazyQuery } from '@apollo/client'
+import { Alert } from 'react-bootstrap'
+import { useAuthenticatedUser } from '../../hooks'
 
-const LOGIN_QUERY = gql`
-  query Login($email: String, $password: String) {
-    Login(email: $email, password: $password) {
-      accessToken
+const LOGIN_QUERY = gql`query Login($email: String, $password:String){
+    Login(email: $email password: $password){
+      accessToken 
       error
     }
   }
-`;
+`
 
 export default function LoginPage() {
-  const history = useHistory();
+  const history = useHistory()
 
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null)
 
-  const user = useAuthenticatedUser();
+  const user = useAuthenticatedUser()
 
-  const [login, { error, data }] = useLazyQuery(LOGIN_QUERY);
+  const [login, { error, data }] = useLazyQuery(LOGIN_QUERY)
 
   const handleLogin = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     login({
       variables: {
         email: event.target.elements.email.value,
         password: event.target.elements.password.value,
       },
-    });
-  };
+    })
+  }
 
   const toHome = (e) => {
-    e.preventDefault();
-    history.push('');
-  };
+    e.preventDefault()
+    history.push('')
+  }
 
   if (user) {
-    return <Redirect to='/' />;
+    return <Redirect to='/' />
   }
 
   if (data && data.Login.accessToken) {
-    localStorage.setItem('token', data.Login.accessToken);
-    return <Redirect to='/' />;
+    localStorage.setItem('token', data.Login.accessToken)
+    return <Redirect to='/' />
   }
 
   if (data && data.Login.error && data.Login.error !== errorMessage) {
-    setErrorMessage(data.Login.error);
+    setErrorMessage(data.Login.error)
   }
 
   if (error) {
-    console.log(error);
+    console.log(error)
   }
 
   return (
@@ -162,5 +161,5 @@ export default function LoginPage() {
         </div>
       </div>
     </div>
-  );
+  )
 }
