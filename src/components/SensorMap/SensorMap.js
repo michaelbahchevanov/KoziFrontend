@@ -13,7 +13,8 @@ const CELL_HEIGHT = 100 / 14 // 14 cells vertically, each one of them 100/14% wi
 
 const LOCAL_KEY_SHOW_HEATMAP = 'PREFERENCES_SHOW_HEATMAP'
 
-export const SensorMap = ({ workingSensors, faultySensors }) => {
+
+export const SensorMap = ({ workingSensors, faultySensors, maintenanceSensors }) => {
 
   const heatmapPrefence = localStorage.getItem(LOCAL_KEY_SHOW_HEATMAP) !== "false"
 
@@ -69,6 +70,18 @@ export const SensorMap = ({ workingSensors, faultySensors }) => {
               faulty={true}
             />
           ))}
+
+
+          {/* Maintenance sensors */}
+          {maintenanceSensors.map((sensor) => (
+            <Sensor key={[sensor.loc_x, sensor.loc_y, sensor.floor].join("-")}
+              {...sensor}
+              cellHeight={CELL_HEIGHT}
+              cellWidth={CELL_WIDTH}
+              maintenance={true}
+            />
+          ))}
+
 
           <img className='w-100 floor-map' src={floorMapImg} alt='Map of the floor' />
         </Col>

@@ -33,6 +33,10 @@
   transform: scale(calc(1/2.25));
 }
 
+.maintenance-sensor {
+  color: orange;
+}
+
 .faulty-sensor {
   color: #c12d3f;
   border-color: #c12d3f;
