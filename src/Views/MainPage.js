@@ -1,42 +1,12 @@
-import { gql, useQuery } from '@apollo/client'
 import React from "react"
 import { Spinner } from 'react-bootstrap'
 
 import * as Components from "../components/index"
-
-const GET_SENSORS = gql`
-  {
-    MeanClimateMeasurements {
-      floor
-      loc_x
-      loc_y
-      temperature
-      humidity
-    },
-    SensorFaults {
-      id
-      loc_x
-      loc_y
-      floor
-      timestamp
-      fault_code
-    },
-    SensorMaintenance {
-      loc_x,
-      loc_y,
-      floor,
-    }
-  }
-`
-
-
-
+import { GetSensors } from "../hooks"
 
 export default function MainPage() {
 
-  const { data, loading, error } = useQuery(GET_SENSORS, {
-    pollInterval: 10_000
-  })
+  const { data, loading, error } = GetSensors()
 
   if (error) return <h1>Something went wrong. Please try again</h1>
 

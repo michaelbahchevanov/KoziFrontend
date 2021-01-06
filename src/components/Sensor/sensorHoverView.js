@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Overlay, Popover, Col, Row, Button, Modal } from 'react-bootstrap'
 import { useAuthenticatedUser } from '../../hooks'
 import { gql, useMutation } from '@apollo/client'
-
+import { GetSensors, GET_SENSORS } from '../../hooks/getSensors'
 
 export function Sensorhoverview(props) {
 
@@ -17,6 +17,7 @@ export function Sensorhoverview(props) {
   }
 
 
+
   const mutationQuery = gql`
     mutation {
       SetMaintenanceMode(
@@ -29,8 +30,12 @@ export function Sensorhoverview(props) {
       )
     }
     `
+  const [toggleMaintenance] = useMutation(mutationQuery, {
+    refetchQueries: [
+      { query: GET_SENSORS }
+    ]
+  })
 
-  const [toggleMaintenance, { data }] = useMutation(mutationQuery)
 
 
   if (props.fault_code === '') {
@@ -77,12 +82,15 @@ export function Sensorhoverview(props) {
               <Modal.Title>Advanced settings</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <Button variant="warning" onClick={() => toggleMaintenance({})}>
+              <Button variant="warning" onClick={() => {
+                toggleMaintenance({})
+              }}>
                 Toggle maintenance {props.maintenance ? "off" : "on"}
               </Button>
             </Modal.Body>
           </Modal>
-        )}
+        )
+        }
       </>
     )
   } else {
