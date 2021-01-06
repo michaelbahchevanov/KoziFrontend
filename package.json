@@ -44,5 +44,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://michaelbahchevanov.github.io/kozi-frontend"
+  "homepage": "https://michaelbahchevanov.github.io/kozi-frontend",
+  "devDependencies": {
+    "cypress": "^6.2.0"
+  }
 }
