@@ -27,6 +27,7 @@ export const GET_SENSORS = gql`
 
 export const GetSensors = () => {
   const { data, loading, error, refetch } = useQuery(GET_SENSORS, {
+    pollInterval: 10_000
   })
 
   return { data, loading, error, refetch }

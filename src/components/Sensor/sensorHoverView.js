@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Overlay, Popover, Col, Row, Button, Modal } from 'react-bootstrap'
+import { Overlay, Popover, Row, Button, Modal } from 'react-bootstrap'
 import { useAuthenticatedUser } from '../../hooks'
 import { gql, useMutation } from '@apollo/client'
-import { GetSensors, GET_SENSORS } from '../../hooks/getSensors'
+import { GET_SENSORS } from '../../hooks/getSensors'
 
 export function Sensorhoverview(props) {
 
@@ -66,7 +66,7 @@ export function Sensorhoverview(props) {
               {(Math.round(props.temperature * 100) / 100).toFixed(1) + ' °C '}
               <strong>H:</strong>{' '}
               {(Math.round(props.humidity * 100) / 100).toFixed(1)}
-              {true && (
+              {user && (
                 <Row className="justify-content-center">
                   <Button variant="primary" className="mt-2" onClick={handleShow}>
                     Advanced
@@ -76,7 +76,7 @@ export function Sensorhoverview(props) {
             </Popover.Content>
           </Popover>
         </Overlay>
-        {true && (
+        {user && (
           <Modal show={show} animation={false} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Advanced settings</Modal.Title>
