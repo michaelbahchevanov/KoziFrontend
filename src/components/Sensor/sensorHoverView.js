@@ -1,10 +1,17 @@
 import React, { useState } from 'react'
+<<<<<<< HEAD
 import { Overlay, Popover, Row, Button, Modal, ToggleButtonGroup, ToggleButton, Col } from 'react-bootstrap'
 import { gql, useMutation } from '@apollo/client'
 import { GET_SENSORS } from '../../hooks/getSensors'
 import TemperatureChart from '../TemperatureChart/TemperatureChart'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTools } from '@fortawesome/free-solid-svg-icons'
+=======
+import { Overlay, Popover, Row, Button, Modal } from 'react-bootstrap'
+import { useAuthenticatedUser } from '../../hooks'
+import { gql, useMutation } from '@apollo/client'
+import { GET_SENSORS } from '../../hooks/getSensors'
+>>>>>>> 070218a9eb6dec4819858e907e8141a3dd303f84
 
 export function Sensorhoverview(props) {
 
