@@ -47,7 +47,7 @@ export default function Sensor({
           }}
         >
           <span>
-            <FontAwesomeIcon style={{ color: "black" }} icon={faTools} size="3x" />
+            <FontAwesomeIcon style={{ color: "black", opacity: 0.65 }} icon={faTools} size="3x" />
           </span>
           <SensorHoverView
             handleOverlayClose={handleClose}

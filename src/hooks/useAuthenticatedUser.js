@@ -14,11 +14,11 @@ export const useAuthenticatedUser = () => {
 
             logout() {
                 localStorage.removeItem('token')
-                setUser(false)
+                setUser(null)
             },
 
             refresh() {
-                setUser(false)
+                setUser(null)
             },
         })
     }

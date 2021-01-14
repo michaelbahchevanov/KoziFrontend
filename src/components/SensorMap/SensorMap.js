@@ -40,7 +40,7 @@ export const SensorMap = ({ workingSensors, faultySensors, maintenanceSensors })
         <Col xs={11} lg={10}>
           <Button variant="outline-primary" onClick={toggleHeatmapClick}>
             <FontAwesomeIcon icon={faFire} size="2x" className="pr-1" />
-            Heatmap
+            <span>Heatmap</span>
           </Button>
         </Col>
       </Row>

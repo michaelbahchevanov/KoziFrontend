@@ -19,7 +19,8 @@
     "react-bootstrap": "^1.3.0",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "recharts": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,5 +45,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://michaelbahchevanov.github.io/kozi-frontend"
+  "homepage": "https://michaelbahchevanov.github.io/kozi-frontend",
+  "devDependencies": {
+    "@types/recharts": "^1.8.18"
+  }
 }
