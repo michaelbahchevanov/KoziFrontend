@@ -1,10 +1,8 @@
-name: CI/CD
+name: CI/CD test
 
 on:
   push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+    branches: [deployment/config]
 
   workflow_dispatch:
 

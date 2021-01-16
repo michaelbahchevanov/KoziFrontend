@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const jwt = require('jsonwebtoken')
 
-const useAuthenticatedUser = () => {
+export const useAuthenticatedUser = () => {
 
     const [user, setUser] = useState(null)
     const token = localStorage.getItem('token')
@@ -14,15 +14,14 @@ const useAuthenticatedUser = () => {
 
             logout() {
                 localStorage.removeItem('token')
-                setUser(false)
+                setUser(null)
             },
 
             refresh() {
-                setUser(false)
+                setUser(null)
             },
         })
     }
     return user
 }
 
-export default useAuthenticatedUser
