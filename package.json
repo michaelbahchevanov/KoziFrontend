@@ -47,6 +47,7 @@
   },
   "homepage": "https://michaelbahchevanov.github.io/kozi-frontend",
   "devDependencies": {
-    "@types/recharts": "^1.8.18"
+    "@types/recharts": "^1.8.18",
+    "cypress": "^6.2.0"
   }
 }
