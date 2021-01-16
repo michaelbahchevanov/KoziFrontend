@@ -90,10 +90,10 @@ export function Sensorhoverview(props) {
                 </Col>
               )}
               <Col xs="auto">
-                <ToggleButtonGroup name="durationBtnGroup">
-                  <ToggleButton onClick={() => setChartStartTime('-1d')} >1 Day</ToggleButton>
-                  <ToggleButton onClick={() => setChartStartTime('-3d')} >3 Day</ToggleButton>
-                  <ToggleButton onClick={() => setChartStartTime('-7d')} >7 Days</ToggleButton>
+                <ToggleButtonGroup name="durationBtnGroup" value={chartStartTime} onChange={setChartStartTime}>
+                  <ToggleButton value="-1d" >1 Day</ToggleButton>
+                  <ToggleButton value="-3d" >3 Day</ToggleButton>
+                  <ToggleButton value="-7d" >7 Days</ToggleButton>
                 </ToggleButtonGroup>
               </Col>
             </Row>
