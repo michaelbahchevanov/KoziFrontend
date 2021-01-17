@@ -125,18 +125,6 @@ export default function LoginPage() {
                   </button>
                 </div>
               </form>
-
-              <div className='col-xl-6'>
-                <button
-                  id='main-forgottenPassword'
-                  type='submit'
-                  className='btn btn-p-primary btn-block btn-round mt-3'
-                >
-                  <span className='text-p-primary text-font-secondary'>
-                    Forgotten Password
-                  </span>
-                </button>
-              </div>
             </div>
           </div>
         </div>
