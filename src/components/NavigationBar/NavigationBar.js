@@ -3,7 +3,6 @@ import { Container, Navbar, Nav, Dropdown } from 'react-bootstrap'
 import './NavigationBar.css'
 import isaacLogo from './kozi-isaac-logo.png'
 import { useHistory } from 'react-router-dom'
-import { useAuthenticatedUser } from '../../hooks'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 
@@ -13,8 +12,6 @@ export default function NavigationBar() {
   const toLogin = () => {
     history.push('/login')
   }
-
-  const user = useAuthenticatedUser()
 
   return (
     <Container fluid className="px-0 pb-5" >
@@ -30,19 +27,19 @@ export default function NavigationBar() {
           </Navbar.Brand>
         </div>
 
-        {user && (
+        {global.user && (
           <Nav>
             <Dropdown>
               <Dropdown.Toggle className='font-weight-bold' variant='none'>
-                {user.email}
+                {global.user.email}
               </Dropdown.Toggle>
               <Dropdown.Menu alignRight={true}>
-                <Dropdown.Item onClick={user.logout}>Log out</Dropdown.Item>
+                <Dropdown.Item onClick={global.user.logout}>Log out</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Nav>
         )}
-        {!user && (
+        {!global.user && (
           <Nav>
             <div onClick={toLogin} className="text-center login-buttons">
               <FontAwesomeIcon icon={faSignInAlt} size="3x" />

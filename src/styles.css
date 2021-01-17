@@ -1,0 +1,4 @@
+/*align things inside buttons in the middle*/
+.btn .svg-inline--fa, .btn span{
+    vertical-align: middle;
+}
