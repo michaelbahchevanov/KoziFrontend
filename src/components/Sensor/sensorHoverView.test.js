@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import SensorHoverView from './sensorHoverView';
 
-// it('renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<SensorHoverView/>, div);
-// });
+it('renders without crashing', () => {
+  //   const div = document.createElement('div');
+  //   ReactDOM.render(<SensorHoverView/>, div);
+});
