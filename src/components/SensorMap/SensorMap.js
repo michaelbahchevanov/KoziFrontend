@@ -98,8 +98,7 @@ export const SensorMap = ({
 
         {/* Sensor Map */}
         <Row className='justify-content-center'>
-          <Col xs={0} lg={1}></Col>
-          <Col className='p-0'>
+          <Col xs='11' lg='10' className='p-0'>
             {/* Heatmap */}
             {showHeatMap && <Heatmap data={heatmapDatapoints} />}
 
@@ -142,7 +141,6 @@ export const SensorMap = ({
               alt='Map of the floor'
             />
           </Col>
-          <Col xs={0} lg={1}></Col>
         </Row>
       </Container>
       <div></div>
